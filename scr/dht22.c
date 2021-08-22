@@ -37,7 +37,6 @@
 
 #include <dht/dht.h>
 #include <toggle.h>
-
 #include "ota-api.h"
 
 const int status_tampered_gpio = 14;
@@ -90,7 +89,7 @@ void temperature_sensor_task(void *_args) {
         float humidity_value, temperature_value;
         while (1) {
                 bool success = dht_read_float_data(
-                        DHT_TYPE_DHT11, SENSOR_PIN,
+                        DHT_TYPE_DHT22, SENSOR_PIN,
                         &humidity_value, &temperature_value
                         );
                 if (success) {
